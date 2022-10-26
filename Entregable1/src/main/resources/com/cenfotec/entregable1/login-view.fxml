@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cenfotec.entregable1.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cenfotec.entregable1.view.LoginView">
    <left>
       <AnchorPane prefHeight="407.0" prefWidth="228.0" style="-fx-background-color: #263F73;" BorderPane.alignment="CENTER">
          <children>
@@ -31,7 +31,7 @@
          </children>
       </AnchorPane>
    </left>
-   <right>
+   <center>
       <AnchorPane prefHeight="400.0" prefWidth="332.0" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="CENTER" layoutX="43.0" layoutY="59.0" prefHeight="21.0" prefWidth="207.0" text="Login">
@@ -58,8 +58,9 @@
                </opaqueInsets>
             </TextField>
             <PasswordField fx:id="password" layoutX="110.0" layoutY="162.0" promptText="Password" />
-            <Button fx:id="loginButton" layoutX="27.0" layoutY="235.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="239.0" style="-fx-background-color: #263F73;" text="Login" textFill="WHITE" />
+            <Button fx:id="loginButton" layoutX="27.0" layoutY="241.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="30.0" prefWidth="239.0" style="-fx-background-color: #263F73;" text="Login" textFill="WHITE" />
+            <Label fx:id="infoLabel" alignment="CENTER" layoutX="45.0" layoutY="205.0" prefHeight="17.0" prefWidth="198.0" />
          </children>
       </AnchorPane>
-   </right>
+   </center>
 </BorderPane>

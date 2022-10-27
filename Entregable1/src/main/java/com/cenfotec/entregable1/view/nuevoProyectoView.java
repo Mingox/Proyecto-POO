@@ -1,68 +1,77 @@
 package com.cenfotec.entregable1.view;
 
+import com.cenfotec.entregable1.dao.DAOException;
+import com.cenfotec.entregable1.dao.ProyectoDao;
+import com.cenfotec.entregable1.dao.UsuarioDAO;
+import com.cenfotec.entregable1.dao.mysql.DatabaseConection;
+import com.cenfotec.entregable1.dao.mysql.MYSQLProyectoDAO;
+import com.cenfotec.entregable1.dao.mysql.MYSQLUsuarioDAO;
+import com.cenfotec.entregable1.modelos.Proyecto;
+import com.cenfotec.entregable1.modelos.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckMenuItem;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
+import java.time.format.DateTimeFormatter;
 
 public class nuevoProyectoView {
 
     @FXML
-    private MenuBar Cat_Np;
+    private TextField inputNombre;
 
     @FXML
-    private CheckMenuItem Nv_Np;
+    private TextField inputCategoria;
+    @FXML
+    private TextField inputRepositorio;
 
     @FXML
-    private CheckMenuItem accionT_Np;
+    private DatePicker inputFechaCreacion;
 
     @FXML
-    private Button btnCrearP;
+    private DatePicker inputUltimaModificacion;
 
     @FXML
-    private DatePicker creacion_Np;
+    private Label infoRegistroProyecto;
 
-    @FXML
-    private CheckMenuItem dae_Np;
 
-    @FXML
-    private CheckMenuItem ic_Np;
+    public void crearProyecto(ActionEvent a){
+        DatabaseConection connectNow = new DatabaseConection();
+        Connection connectDB = connectNow.getConection();
 
-    @FXML
-    private CheckMenuItem jdd_Np;
+        ProyectoDao dao = new MYSQLProyectoDAO(connectDB);
+        if (!inputNombre.getText().isBlank() && !inputCategoria.getText().isBlank()
+                && !inputFechaCreacion.toString().isBlank() && !inputUltimaModificacion.toString().isBlank()){
+            try {
+                String nombre = inputNombre.getText();
+                String categoria = inputCategoria.getText();
+                String fechaCreacion = inputFechaCreacion.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                String ultimaModificacion = inputUltimaModificacion.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                String repositorio = inputRepositorio.getText();
+                Proyecto proyecto = new Proyecto(nombre, categoria, fechaCreacion, ultimaModificacion, repositorio);
+                dao.insertar(proyecto);
+                File folderProyecto = new File("C:\\Users\\dflaq\\OneDrive\\Escritorio\\Proyecto-POO\\Entregable1\\src\\main\\java\\com\\cenfotec\\entregable1\\proyectos\\"+nombre);
+                folderProyecto.mkdir();
+                File folderInvestigacion = new File("C:\\Users\\dflaq\\OneDrive\\Escritorio\\Proyecto-POO\\Entregable1\\src\\main\\java\\com\\cenfotec\\entregable1\\proyectos\\"+nombre+"/Investigacion");
+                folderInvestigacion.mkdir();
+                File folderMedia = new File("C:\\Users\\dflaq\\OneDrive\\Escritorio\\Proyecto-POO\\Entregable1\\src\\main\\java\\com\\cenfotec\\entregable1\\proyectos\\"+nombre+"/Media");
+                folderMedia.mkdir();
 
-    @FXML
-    private CheckMenuItem pea_Np;
+                infoRegistroProyecto.setText("Registro exitoso!!");
 
-    @FXML
-    private TextField txtNom_Np;
+            }catch (DAOException e){
+                infoRegistroProyecto.setText("Datos incorrectos");
+            }
+        }else {
+            infoRegistroProyecto.setText("Todos los campos son obligatorios");
+        }
 
-    @FXML
-    private DatePicker ultmodif_Np;
-
-    @FXML
-    private CheckMenuItem vgd_Np;
-
-    @FXML
-    void click(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/proyecto-view.fxml"));
-        Parent root = loader.load();
-        ProyectoView controller = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        controller.init(txtNom_Np.getText(), stage, this);
-        stage.show();
-        stage.close();
     }
 
 }

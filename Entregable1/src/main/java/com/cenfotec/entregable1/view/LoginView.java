@@ -69,10 +69,31 @@ public class LoginView {
             if (userName.getText().equals(user.getUserName()) && password.getText().equals(user.getPassword())) {
                 if (user.getRol().equals("pendiente")){
                     mostrarPantallaDeEspera();
-                }else {
+                }else if (user.getRol().equals("Gestor")){
                     infoLabel.setText("Ingresó correctamente");
-                    Stage login = (Stage) loginButton.getScene().getWindow();
-                    login.close();
+                    Stage stage = (Stage) loginButton.getScene().getWindow();
+                    stage.close();
+                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("proyecto-view-gestor.fxml"));
+                    Scene proyecto = new Scene(fxmlLoader.load(), 570, 350);
+                    stage.setTitle("Proyectos");
+                    stage.setScene(proyecto);
+                    proyecto.getWindow().setWidth(830);
+                    proyecto.getWindow().setHeight(615);
+                    stage.show();
+                }
+                else {
+                    infoLabel.setText("Ingresó correctamente");
+                    Stage stage = (Stage) loginButton.getScene().getWindow();
+                    stage.close();
+                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("proyecto-view.fxml"));
+                    Scene proyecto = new Scene(fxmlLoader.load(), 570, 350);
+                    stage.setTitle("Proyectos");
+                    stage.setScene(proyecto);
+                    proyecto.getWindow().setWidth(830);
+                    proyecto.getWindow().setHeight(615);
+                    stage.show();
+
+
                 }
             } else {
                 infoLabel.setText("Datos incorrectos");

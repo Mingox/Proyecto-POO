@@ -1,8 +1,8 @@
 package com.cenfotec.entregable1.dao.mysql;
 
-import com.cenfotec.entregable1.dao.DAO;
 import com.cenfotec.entregable1.dao.DAOException;
-import com.cenfotec.entregable1.dao.UsuarioDAO;
+import com.cenfotec.entregable1.dao.ProyectoDao;
+import com.cenfotec.entregable1.modelos.Proyecto;
 import com.cenfotec.entregable1.modelos.Usuario;
 
 import java.sql.Connection;
@@ -12,35 +12,31 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MYSQLUsuarioDAO implements UsuarioDAO {
+public class MYSQLProyectoDAO implements ProyectoDao {
 
-    final String INSERT = "INSERT INTO usuarios(username, password, rol, nombre, apellido, edad, correo, imagen)" +
-            "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+    final String INSERT = "INSERT INTO proyectos(nombre, categoria, fechaCreacion, ultimaModificacion, repositorio)" +
+            "VALUES(?, ?, ?, ?, ?)";
+    final String GETONE = "SELECT * from proyectos WHERE nombre = ?";
 
-    final String GETONE = "SELECT * from usuarios WHERE username = ?";
+    final String GETALL = "SELECT * from proyectos";
 
-    final String GETALL = "SELECT * from usuarios";
     private Connection connection;
 
-    public  MYSQLUsuarioDAO(Connection conn){
+    public  MYSQLProyectoDAO(Connection conn){
 
         this.connection = conn;
     }
-
     @Override
-    public void insertar(Usuario a) throws DAOException{
-
+    public void insertar(Proyecto a) throws DAOException {
         PreparedStatement stat = null;
         try{
             stat = connection.prepareStatement(INSERT);
-            stat.setString(1, a.getUserName());
-            stat.setString(2, a.getPassword());
-            stat.setString(3, a.getRol());
-            stat.setString(4, a.getNombre());
-            stat.setString(5, a.getApellido());
-            stat.setInt(6, a.getEdad());
-            stat.setString(7, a.getCorreo());
-            stat.setString(8, a.getImagen());
+            stat.setString(1, a.getNombre());
+            stat.setString(2, a.getCategoria());
+            stat.setString(3, a.getFechaCreacion());
+            stat.setString(4, a.getUltimaModificacion());
+            stat.setString(5, a.getRepositorio());
+
             if (stat.executeUpdate() == 0){
                 throw new DAOException("No se insertó");
             }
@@ -59,38 +55,35 @@ public class MYSQLUsuarioDAO implements UsuarioDAO {
     }
 
     @Override
-    public void modificar(Usuario a) {
+    public void modificar(Proyecto a) throws DAOException {
 
     }
 
     @Override
-    public void eliminar(Usuario a) {
+    public void eliminar(Proyecto a) throws DAOException {
 
     }
 
-    private  Usuario convertir(ResultSet rs) throws SQLException{
-        String username = rs.getString("username");
-        String password = rs.getString("password");
-        String rol = rs.getString("rol");
+    private  Proyecto convertir(ResultSet rs) throws SQLException{
         String nombre = rs.getString("nombre");
-        String apellido = rs.getString("apellido");
-        int edad = rs.getInt("edad");
-        String correo = rs.getString("correo");
-        String imagen = rs.getString("imagen");
-        Usuario usuario = new Usuario(username, password, rol, nombre, apellido, edad, correo, imagen);
-        return usuario;
+        String categoria = rs.getString("categoria");
+        String fechaCreacion = rs.getString("fechaCreacion");
+        String ultimaModificacion = rs.getString("ultimaModificacion");
+        String repositorio = rs.getString("repositorio");
+        Proyecto proyecto = new Proyecto(nombre, categoria, fechaCreacion, ultimaModificacion, repositorio);
+        return proyecto;
     }
 
     @Override
-    public List<Usuario> obtenerTodos() throws  DAOException{
+    public List<Proyecto> obtenerTodos() throws DAOException {
         PreparedStatement stat = null;
         ResultSet rs = null;
-        List<Usuario> usuarios = new ArrayList<>();
+        List<Proyecto> proyectos = new ArrayList<>();
         try{
             stat = connection.prepareStatement(GETALL);
             rs = stat.executeQuery();
             while (rs.next()) {
-                usuarios.add(convertir(rs));
+                proyectos.add(convertir(rs));
             }
         }catch (SQLException e){
             throw new DAOException("Error SQL", e);
@@ -110,22 +103,22 @@ public class MYSQLUsuarioDAO implements UsuarioDAO {
                 }
             }
         }
-        return usuarios;
+        return proyectos;
     }
 
     @Override
-    public Usuario obtener(String id) throws DAOException{
+    public Proyecto obtener(String nombre) throws DAOException {
         PreparedStatement stat = null;
         ResultSet rs = null;
-        Usuario user = null;
+        Proyecto proyecto = null;
         try{
             stat = connection.prepareStatement(GETONE);
-            stat.setString(1, id);
+            stat.setString(1, nombre);
             rs = stat.executeQuery();
             if (rs.next()){
-                user = convertir(rs);
+                proyecto = convertir(rs);
             }else {
-                throw new DAOException("No se ha encontrado al usuario");
+                throw new DAOException("No se ha encontrado al proyecto");
             }
         }catch (SQLException e){
             throw new DAOException("Error SQL", e);
@@ -145,6 +138,7 @@ public class MYSQLUsuarioDAO implements UsuarioDAO {
                 }
             }
         }
-        return user;
+        return proyecto;
     }
+
 }

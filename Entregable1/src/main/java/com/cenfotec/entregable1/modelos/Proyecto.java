@@ -1,17 +1,23 @@
 package com.cenfotec.entregable1.modelos;
 
-public class proyecto {
+public class Proyecto {
 
     private String nombre;
+
+
+
     private String Categoria;
     private String fechaCreacion;
     private String UltimaModificacion;
 
-    public proyecto(String nombre, String categoria, String fechaCreacion, String ultimaModificacion) {
+    private String repositorio;
+
+    public Proyecto(String nombre, String categoria, String fechaCreacion, String ultimaModificacion, String repositorio) {
         this.nombre = nombre;
-        Categoria = categoria;
+        this.Categoria = categoria;
         this.fechaCreacion = fechaCreacion;
-        UltimaModificacion = ultimaModificacion;
+        this.UltimaModificacion = ultimaModificacion;
+        this.repositorio = repositorio;
     }
 
     public String getNombre() {
@@ -44,6 +50,14 @@ public class proyecto {
 
     public void setUltimaModificacion(String ultimaModificacion) {
         UltimaModificacion = ultimaModificacion;
+    }
+
+    public String getRepositorio() {
+        return repositorio;
+    }
+
+    public void setRepositorio(String repositorio) {
+        this.repositorio = repositorio;
     }
 
     @Override

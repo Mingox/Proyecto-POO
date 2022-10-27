@@ -1,6 +1,6 @@
 package com.cenfotec.entregable1.view;
 
-import com.cenfotec.entregable1.DatabaseConection;
+import com.cenfotec.entregable1.dao.mysql.DatabaseConection;
 import com.cenfotec.entregable1.Main;
 import com.cenfotec.entregable1.dao.DAOException;
 import com.cenfotec.entregable1.dao.UsuarioDAO;
@@ -39,6 +39,24 @@ public class LoginView {
             infoLabel.setText("Por favor ingrese ambos campos");
         }
     }
+
+    public void signupButtonAction(ActionEvent e) throws  IOException {
+        Stage stage = (Stage) loginButton.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("registro.fxml"));
+        Scene registro = new Scene(fxmlLoader.load(), 570, 350);
+        stage.setTitle("Registro");
+        stage.setScene(registro);
+        registro.getWindow().setWidth(350);
+        registro.getWindow().setHeight(550);
+        stage.show();
+
+    }
+
+
+
+
+
     public void validarLogin() throws DAOException {
         DatabaseConection connectNow = new DatabaseConection();
         Connection connectDB = connectNow.getConection();
@@ -49,14 +67,13 @@ public class LoginView {
         try{
             Usuario user = dao.obtener(data);
             if (userName.getText().equals(user.getUserName()) && password.getText().equals(user.getPassword())) {
-                infoLabel.setText("Ingresó correctamente");
-                Stage stage = (Stage) loginButton.getScene().getWindow();
-                stage.close();
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("prueba.fxml"));
-                Scene scene = new Scene(fxmlLoader.load(), 520, 380);
-                stage.setTitle("prueba");
-                stage.setScene(scene);
-                stage.show();
+                if (user.getRol().equals("pendiente")){
+                    mostrarPantallaDeEspera();
+                }else {
+                    infoLabel.setText("Ingresó correctamente");
+                    Stage login = (Stage) loginButton.getScene().getWindow();
+                    login.close();
+                }
             } else {
                 infoLabel.setText("Datos incorrectos");
             }
@@ -70,6 +87,17 @@ public class LoginView {
 
 
     }
+
+    public void mostrarPantallaDeEspera() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("espera.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 378, 200);
+        Stage stage = new Stage();
+        stage.setTitle("Espera");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
 
 
 }

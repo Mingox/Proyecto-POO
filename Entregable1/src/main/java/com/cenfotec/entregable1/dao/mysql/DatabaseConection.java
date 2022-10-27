@@ -1,4 +1,4 @@
-package com.cenfotec.entregable1;
+package com.cenfotec.entregable1.dao.mysql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

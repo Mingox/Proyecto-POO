@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.Stage;
 
 public class ProyectoView {
 
@@ -50,9 +51,13 @@ public class ProyectoView {
     @FXML
     private TableView<?> tabProyecto;
 
+    private nuevoProyectoView controllerNuevoProyecto;
+    private Stage stage;
+
     @FXML
     void click(ActionEvent event) {
-
+    stage.show();
+    stage.close();
     }
 
     @FXML
@@ -60,4 +65,10 @@ public class ProyectoView {
 
     }
 
-}
+    public void init(String text, Stage stage, nuevoProyectoView nuevoProyectoView) {
+    btn02Proj.setText(text);
+    this.stage = stage;
+    this.controllerNuevoProyecto=controllerNuevoProyecto;
+    }
+
+}//Fin programa

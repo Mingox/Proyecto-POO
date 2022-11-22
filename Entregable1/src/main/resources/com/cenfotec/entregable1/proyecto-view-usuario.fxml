@@ -73,57 +73,31 @@
                         <Image url="@../../../../../static/projects.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="botonverparticipantesgestor" graphicTextGap="10.0" layoutX="9.0" layoutY="311.0" mnemonicParsing="false" onAction="#click" prefHeight="48.0" prefWidth="188.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff;" text="Participantes" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="14.0" />
-                     </font>
-                     <padding>
-                        <Insets left="32.0" />
-                     </padding>
-                  </Button>
-                  <Button fx:id="botonverlideresgestor" graphicTextGap="10.0" layoutX="9.0" layoutY="371.0" mnemonicParsing="false" onAction="#click" prefHeight="48.0" prefWidth="188.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff;" text="Líderes" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="14.0" />
-                     </font>
-                     <padding>
-                        <Insets left="32.0" />
-                     </padding>
-                  </Button>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="25.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../static/participantes.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="25.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../static/lider.png" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="botonverestadisticagestor" graphicTextGap="10.0" layoutX="10.0" layoutY="430.0" mnemonicParsing="false" onAction="#click" prefHeight="48.0" prefWidth="188.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff;" text="Estadística" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="14.0" />
-                     </font>
-                     <padding>
-                        <Insets left="32.0" />
-                     </padding>
-                  </Button>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="26.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../static/estadistica.png" />
-                     </image>
-                  </ImageView>
                </children>
             </Pane>
          </left>
          <center>
             <Pane prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #cfcfcf;" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="404.0" layoutY="20.0" prefHeight="55.0" prefWidth="131.0" text="Proyectos" textFill="WHITE">
+                  <Label layoutX="396.0" layoutY="28.0" prefHeight="55.0" prefWidth="107.0" text="Proyecto" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Button fx:id="botonmodificarproyectoGestor" graphicTextGap="10.0" layoutX="68.0" layoutY="187.0" mnemonicParsing="false" onAction="#modificarproyecto" prefHeight="48.0" prefWidth="103.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Modificar" textFill="WHITE">
+                  <Button fx:id="botonmodificarproyectoGestor" graphicTextGap="10.0" layoutX="68.0" layoutY="103.0" mnemonicParsing="false" onAction="#modificarproyecto" prefHeight="48.0" prefWidth="103.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Modificar" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="32.0" />
+                     </padding>
+                  </Button>
+                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="77.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../static/Modificar.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="botoneliminarproyectoGestor" graphicTextGap="10.0" layoutX="68.0" layoutY="187.0" mnemonicParsing="false" onAction="#eliminarproyecto" prefHeight="48.0" prefWidth="103.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Eliminar" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -133,33 +107,7 @@
                   </Button>
                   <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="77.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../static/Modificar.png" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="botoneliminarproyectoGestor" graphicTextGap="10.0" layoutX="68.0" layoutY="285.0" mnemonicParsing="false" onAction="#eliminarproyecto" prefHeight="48.0" prefWidth="103.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Eliminar" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="14.0" />
-                     </font>
-                     <padding>
-                        <Insets left="32.0" />
-                     </padding>
-                  </Button>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="83.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
                         <Image url="@../../../../../static/eliminar.png" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="botoncrearproyectoGestor" graphicTextGap="10.0" layoutX="68.0" layoutY="97.0" mnemonicParsing="false" onAction="#crearproyecto" prefHeight="48.0" prefWidth="103.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Crear" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="14.0" />
-                     </font>
-                     <padding>
-                        <Insets left="32.0" />
-                     </padding>
-                  </Button>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="83.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../static/crear.png" />
                      </image>
                   </ImageView>
                   <Button fx:id="botonverproyecto1" graphicTextGap="10.0" layoutX="283.0" layoutY="103.0" mnemonicParsing="false" onAction="#verproyecto1" prefHeight="48.0" prefWidth="125.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Proyecto 1" textFill="WHITE">
@@ -236,19 +184,6 @@
                      </children>
                   </Pane>
                   <TextField fx:id="txtRepositorioProyectoGestor" alignment="TOP_CENTER" layoutX="269.0" layoutY="384.0" promptText="Repositorio" />
-                  <Button fx:id="botonaprovarcambiosproyecto" graphicTextGap="10.0" layoutX="731.0" layoutY="97.0" mnemonicParsing="false" onAction="#aprovarCambios" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Aprovar cambios" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="14.0" />
-                     </font>
-                     <padding>
-                        <Insets left="32.0" />
-                     </padding>
-                  </Button>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="743.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../static/check.png" />
-                     </image>
-                  </ImageView>
                   <Label layoutX="279.0" layoutY="436.0" prefHeight="41.0" prefWidth="129.0" text="Investigación" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
@@ -259,32 +194,6 @@
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="botonasignarrol" graphicTextGap="10.0" layoutX="731.0" layoutY="193.0" mnemonicParsing="false" onAction="#asignarRol" prefHeight="48.0" prefWidth="168.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Asignar rol" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="14.0" />
-                     </font>
-                     <padding>
-                        <Insets left="32.0" />
-                     </padding>
-                  </Button>
-                  <Button fx:id="AgregarParticipantesProyectoGestor" graphicTextGap="10.0" layoutX="715.0" layoutY="297.0" mnemonicParsing="false" onAction="#asignarParticipantes" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Asignar participantes" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="14.0" />
-                     </font>
-                     <padding>
-                        <Insets left="32.0" />
-                     </padding>
-                  </Button>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="743.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../static/rol.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="731.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../static/participantes.png" />
-                     </image>
-                  </ImageView>
                </children>
             </Pane>
          </center>

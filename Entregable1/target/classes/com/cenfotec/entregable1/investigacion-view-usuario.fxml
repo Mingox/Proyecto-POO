@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cenfotec.entregable1.view.ProyectoView">
+<AnchorPane prefHeight="643.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cenfotec.entregable1.view.ProyectoView">
    <children>
       <BorderPane layoutX="-6.0" prefHeight="714.0" prefWidth="1154.0" style="-fx-background-color: #263F73;">
          <top>
@@ -76,14 +76,14 @@
             </Pane>
          </left>
          <center>
-            <Pane prefHeight="534.0" prefWidth="736.0" style="-fx-background-color: #cfcfcf;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="585.0" prefWidth="859.0" style="-fx-background-color: #cfcfcf;" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="396.0" layoutY="28.0" prefHeight="55.0" prefWidth="107.0" text="Proyecto" textFill="WHITE">
+                  <Label layoutX="382.0" layoutY="26.0" prefHeight="55.0" prefWidth="167.0" text="Investigación" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Button fx:id="botonmodificarproyectoGestor" graphicTextGap="10.0" layoutX="68.0" layoutY="103.0" mnemonicParsing="false" onAction="#modificarproyecto" prefHeight="48.0" prefWidth="103.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Modificar" textFill="WHITE">
+                  <Button fx:id="botonmodificarinvestigacion" graphicTextGap="10.0" layoutX="143.0" layoutY="103.0" mnemonicParsing="false" onAction="#modificarproyecto" prefHeight="48.0" prefWidth="109.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Modificar" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -91,12 +91,12 @@
                         <Insets left="32.0" />
                      </padding>
                   </Button>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="77.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="151.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../static/Modificar.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="botoneliminarproyectoGestor" graphicTextGap="10.0" layoutX="68.0" layoutY="187.0" mnemonicParsing="false" onAction="#eliminarproyecto" prefHeight="48.0" prefWidth="103.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Eliminar" textFill="WHITE">
+                  <Button fx:id="botoneliminarinvestigacion" graphicTextGap="10.0" layoutX="144.0" layoutY="187.0" mnemonicParsing="false" onAction="#eliminarproyecto" prefHeight="48.0" prefWidth="106.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Eliminar" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -104,12 +104,12 @@
                         <Insets left="32.0" />
                      </padding>
                   </Button>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="77.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="151.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../static/eliminar.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="botonverproyecto1" graphicTextGap="10.0" layoutX="283.0" layoutY="103.0" mnemonicParsing="false" onAction="#verproyecto1" prefHeight="48.0" prefWidth="125.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Proyecto 1" textFill="WHITE">
+                  <Button fx:id="botonverproyecto1" graphicTextGap="10.0" layoutX="403.0" layoutY="103.0" mnemonicParsing="false" onAction="#verproyecto1" prefHeight="48.0" prefWidth="125.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Proyecto 1" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -117,12 +117,12 @@
                         <Insets left="32.0" />
                      </padding>
                   </Button>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="296.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="418.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../static/projects.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="botonverproyecto2" graphicTextGap="10.0" layoutX="503.0" layoutY="103.0" mnemonicParsing="false" onAction="#verproyecto2" prefHeight="48.0" prefWidth="125.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Proyecto 2" textFill="WHITE">
+                  <Button fx:id="botonverproyecto2" graphicTextGap="10.0" layoutX="656.0" layoutY="103.0" mnemonicParsing="false" onAction="#verproyecto2" prefHeight="48.0" prefWidth="125.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Proyecto 2" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -130,7 +130,7 @@
                         <Insets left="32.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="botonverproyecto3" graphicTextGap="10.0" layoutX="283.0" layoutY="187.0" mnemonicParsing="false" onAction="#verproyecto3" prefHeight="48.0" prefWidth="125.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Proyecto 3" textFill="WHITE">
+                  <Button fx:id="botonverproyecto3" graphicTextGap="10.0" layoutX="403.0" layoutY="187.0" mnemonicParsing="false" onAction="#verproyecto3" prefHeight="48.0" prefWidth="125.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Proyecto 3" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -138,7 +138,7 @@
                         <Insets left="32.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="botonverproyecto4" graphicTextGap="10.0" layoutX="503.0" layoutY="187.0" mnemonicParsing="false" onAction="#verproyecto4" prefHeight="48.0" prefWidth="125.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Proyecto 4" textFill="WHITE">
+                  <Button fx:id="botonverproyecto4" graphicTextGap="10.0" layoutX="656.0" layoutY="187.0" mnemonicParsing="false" onAction="#verproyecto4" prefHeight="48.0" prefWidth="125.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Proyecto 4" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -146,53 +146,41 @@
                         <Insets left="32.0" />
                      </padding>
                   </Button>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="515.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="665.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../static/projects.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="296.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="418.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../static/projects.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="515.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="665.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../static/projects.png" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="txtNombreProyectoGestor" alignment="TOP_CENTER" layoutX="269.0" layoutY="327.0" promptText="Nombre del proyecto" />
-                  <TextField fx:id="txtCategoriaProyectoGestor" alignment="TOP_CENTER" layoutX="491.0" layoutY="327.0" promptText="Categoría" />
-                  <Pane layoutX="515.0" layoutY="485.0" prefHeight="76.0" prefWidth="78.0" style="-fx-background-color: #e4e2ec; -fx-border-color: #5e82cd; -fx-border-radius: 5;">
+                  <TextField fx:id="txtnombreProyectoInvestigacion" alignment="TOP_CENTER" layoutX="233.0" layoutY="328.0" promptText="Nombre del proyecto" />
+                  <TextField fx:id="txtCategoriaInvesUsuario" alignment="TOP_CENTER" layoutX="233.0" layoutY="385.0" promptText="Categoría" />
+                  <Pane layoutX="478.0" layoutY="483.0" prefHeight="76.0" prefWidth="78.0" style="-fx-background-color: #e4e2ec; -fx-border-color: #5e82cd; -fx-border-radius: 5;">
                      <children>
-                        <ImageView fx:id="btnMediaProyectoGestor" fitHeight="68.0" fitWidth="56.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../static/median.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane layoutX="304.0" layoutY="485.0" prefHeight="76.0" prefWidth="78.0" style="-fx-background-color: #e4e2ec; -fx-border-color: #5e82cd; -fx-border-radius: 5;">
-                     <children>
-                        <ImageView fx:id="btnInvestigacionProyectoGestor" fitHeight="68.0" fitWidth="50.0" layoutX="11.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="btnInvestigacionUsuario" fitHeight="68.0" fitWidth="50.0" layoutX="11.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../static/investigacionn.png" />
                            </image>
                         </ImageView>
                      </children>
                   </Pane>
-                  <TextField fx:id="txtRepositorioProyectoGestor" alignment="TOP_CENTER" layoutX="269.0" layoutY="384.0" promptText="Repositorio" />
-                  <Label layoutX="279.0" layoutY="436.0" prefHeight="41.0" prefWidth="129.0" text="Investigación" textFill="WHITE">
+                  <Label layoutX="452.0" layoutY="434.0" prefHeight="41.0" prefWidth="129.0" text="Investigación" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="525.0" layoutY="436.0" prefHeight="41.0" prefWidth="59.0" text="Media" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txtFechaCreacionProyectoGestor" alignment="TOP_CENTER" layoutX="491.0" layoutY="384.0" promptText="Fecha de creación" />
+                  <TextField fx:id="txtTitulo" layoutX="452.0" layoutY="327.0" prefHeight="26.0" prefWidth="151.0" promptText="Titulo" />
+                  <TextField fx:id="txtSub" layoutX="656.0" layoutY="327.0" prefHeight="26.0" prefWidth="147.0" promptText="Subtitulo" />
+                  <TextField fx:id="txtTema" layoutX="452.0" layoutY="384.0" prefHeight="26.0" prefWidth="150.0" promptText="Tema" />
+                  <TextField fx:id="txtAutor" layoutX="656.0" layoutY="384.0" prefHeight="26.0" prefWidth="148.0" promptText="Autor" />
                </children>
             </Pane>
          </center>

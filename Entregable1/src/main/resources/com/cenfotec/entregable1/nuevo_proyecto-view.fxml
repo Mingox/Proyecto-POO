@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -69,7 +70,7 @@
       </Button>
       <TextField fx:id="inputRepositorio" layoutX="48.0" layoutY="201.0" prefHeight="25.0" prefWidth="149.0" promptText="Repositorio" />
       <Label fx:id="infoRegistroProyecto" alignment="CENTER" layoutX="172.0" layoutY="323.0" prefHeight="17.0" prefWidth="149.0" />
-      <TextField fx:id="txtFechaCreacion" layoutX="48.0" layoutY="239.0" prefHeight="25.0" prefWidth="149.0" promptText="Fecha de creación" />
-      <TextField fx:id="txtultimaModificacion" layoutX="48.0" layoutY="286.0" prefHeight="25.0" prefWidth="149.0" promptText="Última modificación" />
+      <DatePicker fx:id="inputUltimaModificacion" layoutX="48.0" layoutY="239.0" prefHeight="25.0" prefWidth="149.0" promptText="Última modificación" />
+      <DatePicker fx:id="inputFechaCreacion" layoutX="48.0" layoutY="286.0" prefHeight="25.0" prefWidth="149.0" promptText="Fecha de creación" />
    </children>
 </AnchorPane>

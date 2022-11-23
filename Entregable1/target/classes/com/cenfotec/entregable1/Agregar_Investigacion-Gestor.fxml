@@ -67,5 +67,10 @@
             </ImageView>
          </children>
       </Pane>
+      <Label layoutX="323.0" layoutY="394.0" text="Click para agregar media">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

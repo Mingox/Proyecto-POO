@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.avance1.Controlador_AgregarMedia">
+   <children>
+      <TextField fx:id="txtAutoria" alignment="CENTER" layoutX="152.0" layoutY="197.0" prefHeight="26.0" prefWidth="174.0" promptText="Autoria" />
+      <TextField fx:id="txtProyecto" alignment="CENTER" layoutX="152.0" layoutY="147.0" prefHeight="26.0" prefWidth="174.0" promptText="Proyecto" />
+      <Pane prefHeight="104.0" prefWidth="675.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="87.0" fitWidth="145.0" layoutX="46.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../static/Logo-SK.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="275.0" layoutY="21.0" prefHeight="55.0" prefWidth="261.0" text="Agregar media" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="btnVolver" graphicTextGap="10.0" layoutX="186.0" layoutY="311.0" mnemonicParsing="false" onAction="#switchToScenePaginaPrincipal" prefHeight="48.0" prefWidth="106.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Volver" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets left="32.0" />
+         </padding>
+      </Button>
+      <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="196.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../static/Volver.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnAgregar1" graphicTextGap="10.0" layoutX="396.0" layoutY="311.0" mnemonicParsing="false" onAction="#agregar" prefHeight="48.0" prefWidth="106.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" text="Agregar" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets left="32.0" />
+         </padding>
+      </Button>
+      <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="412.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../static/crear.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="424.0" layoutY="197.0" prefHeight="76.0" prefWidth="78.0" style="-fx-background-color: #e4e2ec; -fx-border-color: #5e82cd; -fx-border-radius: 5;">
+         <children>
+            <ImageView fx:id="btnMediaUsuario" fitHeight="68.0" fitWidth="50.0" layoutX="11.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../static/median.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label layoutX="381.0" layoutY="160.0" text="Click para agregar media">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtFechaCreacion" alignment="CENTER" layoutX="152.0" layoutY="247.0" prefHeight="26.0" prefWidth="174.0" promptText="Fecha de creación" />
+   </children>
+</AnchorPane>

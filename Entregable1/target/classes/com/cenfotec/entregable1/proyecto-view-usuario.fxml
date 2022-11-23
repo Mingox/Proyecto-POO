@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -16,7 +15,7 @@
    <children>
       <BorderPane layoutX="-6.0" prefHeight="714.0" prefWidth="1154.0" style="-fx-background-color: #263F73;">
          <top>
-            <Pane prefHeight="104.0" prefWidth="1130.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="104.0" prefWidth="1061.0" style="-fx-background-color: #263F73; -fx-border-color: #ffffff;" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fitHeight="87.0" fitWidth="145.0" layoutX="46.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -77,7 +76,7 @@
             </Pane>
          </left>
          <center>
-            <Pane prefHeight="637.0" prefWidth="952.0" style="-fx-background-color: #cfcfcf;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="534.0" prefWidth="736.0" style="-fx-background-color: #cfcfcf;" BorderPane.alignment="CENTER">
                <children>
                   <Label layoutX="396.0" layoutY="28.0" prefHeight="55.0" prefWidth="107.0" text="Proyecto" textFill="WHITE">
                      <font>
@@ -164,7 +163,6 @@
                   </ImageView>
                   <TextField fx:id="txtNombreProyectoGestor" alignment="TOP_CENTER" layoutX="269.0" layoutY="327.0" promptText="Nombre del proyecto" />
                   <TextField fx:id="txtCategoriaProyectoGestor" alignment="TOP_CENTER" layoutX="491.0" layoutY="327.0" promptText="Categoría" />
-                  <DatePicker fx:id="fechaCreacionProyectoGestor" layoutX="493.0" layoutY="384.0" prefHeight="25.0" prefWidth="149.0" promptText="      Fecha creación" />
                   <Pane layoutX="515.0" layoutY="485.0" prefHeight="76.0" prefWidth="78.0" style="-fx-background-color: #e4e2ec; -fx-border-color: #5e82cd; -fx-border-radius: 5;">
                      <children>
                         <ImageView fx:id="btnMediaProyectoGestor" fitHeight="68.0" fitWidth="56.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
@@ -194,6 +192,7 @@
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Label>
+                  <TextField fx:id="txtFechaCreacionProyectoGestor" alignment="TOP_CENTER" layoutX="491.0" layoutY="384.0" promptText="Fecha de creación" />
                </children>
             </Pane>
          </center>

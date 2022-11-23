@@ -1,4 +1,4 @@
-package Model;
+package com.cenfotec.entregable1.modelos;
 
 public class Media {
     private String Archivo;

@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -35,6 +36,9 @@ public class userModificarInvestigacionController {
     private Button btnVolver;
 
     @FXML
+    private Label labelError;
+
+    @FXML
     private TextField txtNombreProyecto;
     @FXML
     private TextField txtTitulo;
@@ -55,6 +59,8 @@ public class userModificarInvestigacionController {
 
 
     void modificar(ActionEvent event) throws IOException {
+
+
 
         String nombreModificacion = txtModificar.getText();
         String NombreInvestigacion = txtNombreProyecto.getText();
@@ -78,7 +84,7 @@ public class userModificarInvestigacionController {
 
 
         } catch (ClassNotFoundException | SQLException e) {
-            throw new RuntimeException(e);
+            labelError.setText("Recuerde rellenar todos los espacios.");
 
         }
 
@@ -93,6 +99,45 @@ public class userModificarInvestigacionController {
             throw new RuntimeException(e);
         }
 
+        root = FXMLLoader.load(getClass().getResource("esperaGestor.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root,425,272);
+        stage.setScene(scene);
+        stage.show();
+
+
+    }
+        void borrar(ActionEvent event) throws Exception {
+
+            String nombreModificacion = txtModificar.getText();
+
+
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/proyectopoo", "root", "fenix");
+                pst = con.prepareStatement("DELETE FROM `proyectopoo`.`investigaciones` WHERE `Proyecto` = ?;");
+                pst.setString(1, nombreModificacion);
+
+            } catch (ClassNotFoundException | SQLException e) {
+                labelError.setText("Recuerde rellenar todos los espacios.");
+            }
+
+            root = FXMLLoader.load(getClass().getResource("esperaGestor.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root,425,272);
+            stage.setScene(scene);
+            stage.show();
+
+
+        }
+
+
+    public void switchToScenePaginaPrincipal(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root,403,314);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

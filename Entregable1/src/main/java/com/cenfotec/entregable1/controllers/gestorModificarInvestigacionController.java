@@ -3,9 +3,11 @@ package com.cenfotec.entregable1.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -29,6 +31,8 @@ public class gestorModificarInvestigacionController {
     private Button btnVolver;
 
     @FXML
+    private Label labelError;
+    @FXML
     private TextField txtNombreProyecto;
     @FXML
     private TextField txtTitulo;
@@ -49,6 +53,8 @@ public class gestorModificarInvestigacionController {
 
 
     void modificar(ActionEvent event) throws Exception {
+
+
 
         String nombreModificacion = txtModificar.getText();
         String nombreInvestigacion = txtNombreProyecto.getText();
@@ -80,12 +86,6 @@ public class gestorModificarInvestigacionController {
         void borrar(ActionEvent event) throws Exception {
 
             String nombreModificacion = txtModificar.getText();
-            String nombreInvestigacion = txtNombreProyecto.getText();
-            String titulo = txtTitulo.getText();
-            String subtitulo = txtSub.getText();
-            String categoria = txtCategoria.getText();
-            String tema = txtTema.getText();
-            String autor = txtAutor.getText();
 
             try {
                 Class.forName("com.mysql.jdbc.Driver");
@@ -94,8 +94,17 @@ public class gestorModificarInvestigacionController {
                 pst.setString(1, nombreModificacion);
 
             } catch (ClassNotFoundException | SQLException e) {
-                throw new RuntimeException(e);
+                labelError.setText("Recuerde rellenar todos los espacios.");
             }
+
+    }
+
+    public void switchToScenePaginaPrincipal(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root,403,314);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

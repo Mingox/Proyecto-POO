@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Entregable1" />
+        <module name="Proyecto-POO" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Entregable1" target="11" />
+      <module name="Proyecto-POO" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

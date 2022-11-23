@@ -3,6 +3,7 @@ module com.cenfotec.entregable1 {
     requires javafx.fxml;
     requires javafx.graphics;
     requires java.sql;
+    requires mysql.connector.j;
 
 
     opens com.cenfotec.entregable1 to javafx.fxml;

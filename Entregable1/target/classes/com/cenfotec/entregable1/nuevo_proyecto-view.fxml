@@ -10,10 +10,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="426.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cenfotec.entregable1.view.nuevoProyectoView">
+<AnchorPane prefHeight="369.0" prefWidth="522.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cenfotec.entregable1.view.nuevoProyectoView">
    <children>
       <TextField fx:id="inputNombre" layoutX="48.0" layoutY="122.0" prefHeight="25.0" prefWidth="149.0" promptText="Nombre" />
-      <DatePicker fx:id="inputFechaCreacion" layoutX="48.0" layoutY="276.0" prefHeight="25.0" prefWidth="149.0" promptText="Fecha de creación" />
+      <DatePicker fx:id="inputFechaCreacion" layoutX="48.0" layoutY="285.0" prefHeight="25.0" prefWidth="149.0" promptText="Fecha de creación" />
       <Pane prefHeight="76.0" prefWidth="522.0" style="-fx-background-color: #263F73;">
          <children>
             <Label layoutX="218.0" layoutY="27.0" text="Proyecto" textFill="WHITE">
@@ -21,18 +21,18 @@
                   <Font name="Arial Bold" size="20.0" />
                </font>
             </Label>
-            <ImageView fitHeight="50.0" fitWidth="100.0" layoutX="24.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="109.0" layoutX="51.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Proyecto-POO/Entregable1/src/icons/Logo-SK.jpg" />
+                  <Image url="@../../../../../static/Logo-SK.jpg" />
                </image>
             </ImageView>
          </children>
       </Pane>
       <Pane layoutX="255.0" layoutY="150.0" prefHeight="76.0" prefWidth="78.0" style="-fx-background-color: #e4e2ec; -fx-border-color: #5e82cd; -fx-border-radius: 5;">
          <children>
-            <ImageView fitHeight="51.0" fitWidth="40.0" layoutX="19.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="64.0" fitWidth="54.0" layoutX="12.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../icons/add-files.png" />
+                  <Image url="@../../../../../static/investigacionn.png" />
                </image>
             </ImageView>
          </children>
@@ -50,15 +50,15 @@
       </Label>
       <Pane layoutX="388.0" layoutY="150.0" prefHeight="76.0" prefWidth="78.0" style="-fx-background-color: #e4e2ec; -fx-border-color: #5e82cd; -fx-border-radius: 5;">
          <children>
-            <ImageView fitHeight="51.0" fitWidth="40.0" layoutX="19.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="64.0" fitWidth="54.0" layoutX="12.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../icons/add-files.png" />
+                  <Image url="@../../../../../static/median.png" />
                </image>
             </ImageView>
          </children>
       </Pane>
       <TextField fx:id="inputCategoria" layoutX="48.0" layoutY="163.0" prefHeight="25.0" prefWidth="149.0" promptText="Categoria" />
-      <Button fx:id="crearProyectoButton" alignment="CENTER" layoutX="185.0" layoutY="357.0" mnemonicParsing="false" onAction="#crearProyecto" prefHeight="43.0" prefWidth="109.0" style="-fx-background-color: #263F73;" text="Crear Proyecto" textFill="WHITE">
+      <Button fx:id="crearProyectoButton" alignment="CENTER" layoutX="294.0" layoutY="264.0" mnemonicParsing="false" onAction="#crearProyecto" prefHeight="43.0" prefWidth="109.0" style="-fx-background-color: #263F73;" text="Crear Proyecto" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>

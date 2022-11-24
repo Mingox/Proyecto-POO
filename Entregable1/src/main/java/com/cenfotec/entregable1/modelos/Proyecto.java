@@ -3,9 +3,6 @@ package com.cenfotec.entregable1.modelos;
 public class Proyecto {
 
     private String nombre;
-
-
-
     private String Categoria;
     private String fechaCreacion;
     private String UltimaModificacion;
